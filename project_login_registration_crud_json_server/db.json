@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "rayhan",
+      "email": "rayhan@gg.c",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "name": "ridoy",
+      "email": "ridoy@gg.cm",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "name": "Demo",
+      "email": "demo@gg.c",
+      "password": "12345678",
+      "id": 3
+    }
+  ]
+}

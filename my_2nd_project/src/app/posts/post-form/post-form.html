@@ -1,0 +1,31 @@
+<h2>{{ postId ? 'Edit Post #' + postId : 'New Post' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+  <label>
+    User ID
+    <input type="number" formControlName="userId" />
+  </label>
+
+  <label>
+    Title
+    <input type="text" formControlName="title" />
+    @if (form.controls.title.touched && form.controls.title.invalid) {
+      <small class="error">Title must be at least 3 characters.</small>
+    }
+  </label>
+
+  <label>
+    Body
+    <textarea rows="5" formControlName="body"></textarea>
+    @if (form.controls.body.touched && form.controls.body.invalid) {
+      <small class="error">Body is required.</small>
+    }
+  </label>
+
+  @if (errorMessage()) {
+    <p class="error">{{ errorMessage() }}</p>
+  }
+
+  <button type="submit">Save</button>
+  <a routerLink="/posts">Cancel</a>
+</form>

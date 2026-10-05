@@ -1,0 +1,3 @@
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+.error { color: #c00; }

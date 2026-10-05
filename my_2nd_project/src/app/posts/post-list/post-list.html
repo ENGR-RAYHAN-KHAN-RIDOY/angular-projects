@@ -1,0 +1,23 @@
+<p><a routerLink="/posts/new">+ New Post</a></p>
+
+@if (loading()) {
+  <p>Loading...</p>
+} @else if (error()) {
+  <p class="error">{{ error() }} <button (click)="loadPosts()">Retry</button></p>
+} @else {
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Title</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      @for (post of posts(); track post.id) {
+        <tr>
+          <td>{{ post.id }}</td>
+          <td>{{ post.title }}</td>
+          <td><a [routerLink]="['/posts', post.id, 'edit']">Edit</a></td>
+          <td><button type="button" (click)="deletePost(post)">Delete</button></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

@@ -1,0 +1,58 @@
+<!-- @if (isLoggedIn) {
+  <p>Welcome Rayhan!</p>
+} @else {
+  <p>Please login</p>
+}
+
+<h1>My Angular App </h1>
+<p>{{title}}</p>
+<input [(ngModel)]="name">
+<p>{{ name }}</p>
+
+@for (tender of tenders; track tender.id) {
+  <p>{{ tender.title }}</p>
+} @empty {
+  <p>No tenders found.</p>
+}
+
+
+@switch (status) {
+
+  @case ('open') {
+    <p>Tender is Open</p>
+  }
+
+  @case ('closed') {
+    <p>Tender is Closed</p>
+  }
+
+  @case ('pending') {
+    <p>Tender is Pending</p>
+  }
+
+  @default {
+    <p>Unknown Status</p>
+  }
+} -->
+
+<h1>Student CRUD</h1>
+
+<input [(ngModel)]="name">
+
+@if (isEditing) {
+  <button (click)="update()">Update</button>
+} @else {
+  <button (click)="add()">Add</button>
+}
+
+@for (s of students; track $index; let i = $index) {
+  <p>
+    {{ s }}
+    <button (click)="show(i)">Show</button>
+    <button (click)="edit(i)">Edit</button>
+    <button (click)="remove(i)">Delete</button>
+  </p>
+}
+
+
+

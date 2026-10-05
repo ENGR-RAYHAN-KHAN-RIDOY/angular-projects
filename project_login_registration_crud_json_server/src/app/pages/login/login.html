@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+  <div class="col-md-5 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="h4 text-center mb-4">Login</h2>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="mb-3">
+            <input class="form-control" formControlName="email" placeholder="Email" />
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+          </div>
+
+          @if (error()) {
+            <div class="alert alert-danger py-2">{{ error() }}</div>
+          }
+
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <p class="text-center mt-3 mb-0">Don't have an account? <a routerLink="/register">Register</a></p>
+      </div>
+    </div>
+  </div>
+</div>

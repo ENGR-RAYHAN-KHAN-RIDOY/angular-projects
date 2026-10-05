@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+  <div class="col-md-5 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="h4 text-center mb-4">Edit User</h2>
+
+        <form [formGroup]="form" (ngSubmit)="save()">
+          <div class="mb-3">
+            <input class="form-control" formControlName="name" placeholder="Name" />
+            @if (form.controls.name.touched && form.controls.name.invalid) {
+              <small class="text-danger">Name is required</small>
+            }
+          </div>
+          <div class="mb-3">
+            <input class="form-control" formControlName="email" placeholder="Email" />
+            @if (form.controls.email.touched && form.controls.email.invalid) {
+              <small class="text-danger">Enter a valid email</small>
+            }
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mb-2">Save</button>
+          <a class="btn btn-secondary w-100" routerLink="/home">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
